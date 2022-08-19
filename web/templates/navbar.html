@@ -1,0 +1,38 @@
+<nav class="side-navbar">
+    <!-- Sidebar Header    -->
+    <div class="sidebar-header d-flex align-items-center justify-content-center p-3 mb-3">
+      <!-- User Info-->
+      <div class="sidenav-header-inner text-center"><img class="img-fluid rounded-circle avatar mb-3" src="{{ url_for('static', filename='img/digitalent-logo.png') }}" alt="digitalent-logo">
+        <h2 class="h5 text-white text-uppercase mb-0">DTS FGA 2022</h2>
+        <p class="text-sm mb-0 text-muted">Big Data and Flask Project</p>
+      </div>
+      <!-- Small Brand information, appears on minimized sidebar--><a class="brand-small text-center" href="{{ url_for('index') }}">
+        <p class="h1 m-0">FGA</p></a>
+    </div>
+    <!-- Sidebar Navigation Menus--><span class="text-uppercase text-gray-500 text-sm fw-bold letter-spacing-0 mx-lg-2 heading">Main</span>
+    <ul class="list-unstyled">                  
+      <li class="sidebar-item"><a class="sidebar-link" href="{{ url_for('index') }}"> 
+          <svg class="svg-icon svg-icon-sm svg-icon-heavy me-xl-2">
+            <use xlink:href="#real-estate-1"> </use>
+          </svg>Halaman Utama </a></li>
+      <li class="sidebar-item"><a class="sidebar-link" href="#exampledropdownDropdown" data-bs-toggle="collapse"> 
+          <svg class="svg-icon svg-icon-sm svg-icon-heavy me-xl-2">
+            <use xlink:href="#survey-1"> </use>
+          </svg>Masukkan Data Disini</a>
+        <ul class="collapse list-unstyled " id="exampledropdownDropdown">
+          <li><a class="sidebar-link" href="{{ url_for('daily_input') }}">Data Harian</a></li>
+          <li><a class="sidebar-link" href="{{ url_for('harvesting_fish') }}">Data Panen</a></li>
+        </ul>
+      </li>
+      <li class="sidebar-item"><a class="sidebar-link" href="{{ url_for('about_data') }}"> 
+        <svg class="svg-icon svg-icon-sm svg-icon-heavy me-xl-2">
+          <use xlink:href="#sales-up-1"> </use>
+        </svg>Grafik Populasi dan Lingkungan</a></li>
+    <!-- </ul><span class="text-uppercase text-gray-500 text-sm fw-bold letter-spacing-0 mx-lg-2 heading">Chart Only</span>
+    <ul class="list-unstyled py-4">
+      <li class="sidebar-item"> <a class="sidebar-link" href="{{ url_for('data_visualization') }}"> 
+          <svg class="svg-icon svg-icon-xs svg-icon-heavy me-xl-2">
+            <use xlink:href="#chart-1"> </use>
+          </svg>Data Visualization</a></li>
+    </ul> -->
+</nav>

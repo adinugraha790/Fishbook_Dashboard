@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Side Navbar -->
+<div class="page">
+	{% include 'header.html' %}
+	<!-- Breadcrumb-->
+	{% include 'breadcrumb.html' %}
+	<!-- Page Header-->
+	<header class="py-4">
+		<div class="container-fluid py-2">
+			<h1 class="h3 fw-normal mb-0">{{ title }}</h1>
+		</div>
+	</header>
+	<section class="pb-5">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-9 mx-auto">
+					<div class="card">
+						<div class="card-header border-bottom">
+							<h3 class="h4 mb-0">Fishbook Harvesting Fish Form</h3>
+						</div>
+						<div class="card-body">
+							<p class="text-sm">Please input your harvesting data here.</p>
+							<form class="form-horizontal" action="{{ url_for('harvesting_fish') }}", method="POST">
+								<div class="row gy-2 mb-4">
+									<div class="row gy-2 mb-4">
+										<label class="col-sm-3 form-label" for="">Tanggal Panen</label>
+										<div class="col-sm-9">
+											<input class="form-control" id="" type="text" name="panen-date"
+												placeholder="YYYY-MM-DD"><small class="form-text">e.g. 2022-02-22</small>
+										</div>
+									</div>
+									<label class="col-sm-3 form-label" for="">Parsial</label>
+									<div class="col-sm-9">
+										<input class="form-control" id="" type="text" name="parsial" placeholder="">
+									</div>
+								</div>
+								<div class="row gy-2 mb-4">
+									<label class="col-sm-3 form-label" for="">ABW</label>
+									<div class="col-sm-9">
+										<input class="form-control" id="" type="text" name="abw" placeholder="">
+									</div>
+								</div>
+								<div class="row gy-2 mb-4">
+									<label class="col-sm-3 form-label" for="">Populasi</label>
+									<div class="col-sm-9">
+										<input class="form-control" id="" type="text" name="populasi" placeholder="">
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-9 ms-auto">
+										<input class="btn btn-primary" type="submit" value="Submit">
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	{% include 'footer.html' %}
+</div>
+{% endblock content %}

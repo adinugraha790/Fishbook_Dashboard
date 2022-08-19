@@ -1,0 +1,143 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Side Navbar -->
+<div class="page">
+	{% include 'header.html' %}
+	<!-- Breadcrumb-->
+	{% include 'breadcrumb.html' %}
+	<!-- Page Header-->
+	<header class="py-4">
+		<div class="container-fluid py-2">
+			<h1 class="h3 fw-normal mb-0">{{ title }}</h1>
+		</div>
+	</header>
+	<section class="pb-5">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-9 mx-auto">
+					<div class="card">
+						<div class="card-header border-bottom">
+							<h3 class="h4 mb-0">Fishbook Daily Input Form</h3>
+						</div>
+						<div class="card-body">
+							<p class="text-sm">Please input your daily data here.</p>
+							<form class="form-horizontal" action="{{ url_for('daily_input') }}", method="POST">
+								<div class="row gy-2 mb-4">
+									<label class="col-sm-3 form-label" for="">Tanggal</label>
+									<div class="col-sm-9">
+										<input class="form-control" id="" type="text" name="tanggal"
+											placeholder="YYYY-MM-DD"><small class="form-text">e.g. 2022-02-22</small>
+									</div>
+								</div>
+								<div class="row gy-2 mb-4">
+									<label class="col-sm-3 form-label" for="">Berat Ikan</label>
+									<div class="col-sm-9">
+										<input class="form-control" id="" type="text" name="berat-ikan" placeholder="">
+									</div>
+								</div>
+								<div class="row gy-2 mb-4">
+									<label class="col-sm-3 form-label" for="">Jumlah Ikan</label>
+									<div class="col-sm-9">
+										<input class="form-control" id="" type="text" name="jumlah-ikan" placeholder="">
+									</div>
+								</div>
+								<div class="row gy-2 mb-4">
+									<label class="col-sm-3 form-label" for="">Jumlah Ikan Mati</label>
+									<div class="col-sm-9">
+										<input class="form-control" id="" type="text" name="ikan-yang-mati" placeholder="">
+									</div>
+								</div>
+								<div class="row gy-2 mb-4">
+									<label class="col-sm-3 form-label" for="">Feeding Rate</label>
+									<div class="col-sm-9">
+										<input class="form-control" id="" type="text" name="feeding-rate" placeholder="">
+									</div>
+								</div>
+								<div class="row gy-2 mb-4">
+									<label class="col-sm-3 form-label" for="">pH Pagi</label>
+									<div class="col-sm-9">
+										<input class="form-control" id="" type="text" name="ph-pagi" placeholder="">
+									</div>
+								</div>
+								<div class="row gy-2 mb-4">
+									<label class="col-sm-3 form-label" for="">pH Sore</label>
+									<div class="col-sm-9">
+										<input class="form-control" id="" type="text" name="ph-sore" placeholder="">
+									</div>
+								</div>
+								<div class="row gy-2 mb-4">
+									<label class="col-sm-3 form-label" for="">Nitrit</label>
+									<div class="col-sm-9">
+										<input class="form-control" id="" type="text" name="nitrit" placeholder="">
+									</div>
+								</div>
+								<div class="row gy-2 mb-4">
+									<label class="col-sm-3 form-label" for="">DO Pagi</label>
+									<div class="col-sm-9">
+										<input class="form-control" id="" type="text" name="do-pagi" placeholder="">
+									</div>
+								</div>
+								<div class="row gy-2 mb-4">
+									<label class="col-sm-3 form-label" for="">DO Sore</label>
+									<div class="col-sm-9">
+										<input class="form-control" id="" type="text" name="do-sore" placeholder="">
+									</div>
+								</div>
+								<div class="row gy-2 mb-4">
+									<label class="col-sm-3 form-label" for="">Salinitas</label>
+									<div class="col-sm-9">
+										<input class="form-control" id="" type="text" name="salinitas" placeholder="">
+									</div>
+								</div>
+								<div class="row gy-2 mb-4">
+									<label class="col-sm-3 form-label" for="">Suhu Pagi</label>
+									<div class="col-sm-9">
+										<input class="form-control" id="" type="text" name="suhu-pagi" placeholder="">
+									</div>
+								</div>
+								<div class="row gy-2 mb-4">
+									<label class="col-sm-3 form-label" for="">Suhu Sore</label>
+									<div class="col-sm-9">
+										<input class="form-control" id="" type="text" name="suhu-sore" placeholder="">
+									</div>
+								</div>
+								<div class="row gy-2 mb-4">
+									<label class="col-sm-3 form-label" for="">Kadar Amonia</label>
+									<div class="col-sm-9">
+										<input class="form-control" id="" type="text" name="kadar-amonia" placeholder="">
+									</div>
+								</div>
+								<div class="row gy-2 mb-4">
+									<label class="col-sm-3 form-label" for="">Alkalinitas</label>
+									<div class="col-sm-9">
+										<input class="form-control" id="" type="text" name="alkalinitas" placeholder="">
+									</div>
+								</div>
+								<div class="row gy-2 mb-4">
+									<label class="col-sm-3 form-label" for="">Kadar Mg</label>
+									<div class="col-sm-9">
+										<input class="form-control" id="" type="text" name="kadar-mg" placeholder="">
+									</div>
+								</div>
+								<div class="row gy-2 mb-4">
+									<label class="col-sm-3 form-label" for="">Kadar Ca</label>
+									<div class="col-sm-9">
+										<input class="form-control" id="" type="text" name="kadar-ca" placeholder="">
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-9 ms-auto">
+										<input class="btn btn-primary" type="submit" value="Submit">
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	{% include 'footer.html' %}
+</div>
+{% endblock content %}

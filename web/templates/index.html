@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="page">
+      {% include 'header.html' %}
+      <!-- Header Section-->
+      <section class="bg-white py-5">
+        <div class="container-fluid">
+          <div class="row d-flex align-items-md-stretch">
+            <div class="col-lg-12 col-md-12">
+              <div class="card shadow-0">
+                <h2 class="h3 fw-normal"><b>FISHBOOK DASHBOARD</b></h2>
+                <p class="text-sm text-muted">Fishbook Dashboard akan membantu kamu mencatat dan merekam populasi dan
+                   pertumbuhan komoditas perikanan kamu. Selain itu, kamu juga bisa mencatat parameter kualitas air kamu loh. Yuk cobain!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Statistics Section-->
+      <section class="py-5">
+        <div class="container-fluid">
+          <div class="row align-items-stretch gy-4">
+            <div class="col-lg-12">
+              <div class="card">
+                  <div class="card-header border-bottom">
+                      <h4 class="text-center">Rataan Massa Tubuh (<i>Average Body Weight</i>)</h4>
+                  </div>
+                  <div class="card-body">
+                      <div id="{{ ids[0] }}"></div>
+                      <hr>
+                      <p>Rataan massa tubuh adalah jumlah massa komoditas perikanan yang disampel dibagi dengan jumlah komoditas perikanan yang disampel pada suatu hari.</p>
+                  </div>
+              </div>
+          </div>
+            <div class="col-lg-6">
+              <div class="card">
+                  <div class="card-header border-bottom">
+                      <h4 class="text-center">Total Pakan (kg)</h4>
+                    </div>
+                    <div class="card-body">
+                      <div id="{{ ids[2] }}"></div>
+                      <hr>
+                      <p>Total pakan adalah massa pakan total yang diberikan terhadap komoditas perikanan pada periode tertentu.</p>
+                  </div>
+              </div>
+          </div>
+            <div class="col-lg-6 mx-auto">
+              <div class="card">
+                  <div class="card-header border-bottom">
+                      <h4 class="text-center">Tingkat Kelangsungan Hidup (%)</h4>
+                  </div>
+                  <div class="card-body">
+                      <div id="{{ ids[1] }}"></div>
+                      <hr>
+                  </div>
+              </div>
+          </div>
+          </div>
+        </div>
+      </section>
+      {% include 'footer.html' %}
+    </div>
+{% endblock content %}

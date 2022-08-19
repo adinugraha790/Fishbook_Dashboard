@@ -1,0 +1,298 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Side Navbar -->
+<div class="page">
+    {% include 'header.html' %}
+    <!-- Breadcrumb-->
+    {% include 'breadcrumb.html' %}
+    <!-- Page Header-->
+    <header class="py-4">
+        <div class="container-fluid py-2">
+            <h1 class="h3 fw-normal mb-0">{{ title }}</h1>
+        </div>
+    </header>
+    <section>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-header border-bottom">
+                            <h4 class="text-center">FCR (Feed Conversion Ratio)</h4>
+                        </div>
+                        <div class="card-body">
+                            <div id="{{ ids[0] }}"></div><hr>
+                            <p><b>Nilai yang diharapkan:</b> semakin kecil lebih baik<br>
+                                <b>FCR</b> (<i>Feed Convertion Ratio</i>) adalah perbandingan antara massa pakan yang telah diberikan dalam suatu periode kultur tertentu dengan biomassa (massa komoditas perikanan) yang dihasilkan. Karena itu, massa pakan yang dipakai adalah massa pakan kumulatif atau jumlah dari awal penebaran benih hingga dipanen. Karena pakan adalah sumber biaya terbesar dalam kegiatan budidaya, FCR ini akan menentukan seberapa menguntungkannya suatu kegiatan budidaya bagi petani. Semakin kecil FCR, maka akan semakin efisien pemberian pakan dan semakin rendah kuantitas pakan yang diberikan, sehingga lebih menguntungkan bagi petani. Nilai FCR ini ditentukan oleh spesies, ukuran komoditas, parameter lingkungan dan air, serta sistem budidaya.<br>
+                                <b>Tips:</b> pemberian pakan alami yang tidak atau sedikit mengambil biaya, mengurangi suhu kolam, kesesuaian pakan dengan komoditas, pencatatan dan observasi perilaku dan kuantitas makan komoditas perikanan, serta aerasi yang sesuai akan mengurangi FCR.
+                                </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-header border-bottom">
+                            <h4 class="text-center">Total Pakan (kg)</h4>
+                        </div>
+                        <div class="card-body">
+                            <div id="{{ ids[1] }}"></div><hr>
+                            <p><b>Nilai yang diharapkan:</b> semakin kecil lebih baik<br>
+                                <b>Total pakan</b> adalah massa pakan total yang diberikan terhadap komoditas perikanan pada periode tertentu. Semakin kecil jumlah pakan yang diberikan namun pertumbuhannya tetap optimal, adalah tanda semakin efisien pemberian pakan, sehingga menguntungkan bagi petani. Jumlah pakan yang diberikan ini ditentukan oleh spesies, ukuran komoditas, parameter lingkungan dan air, serta sistem budidaya.<br>
+                                <b>Tips:</b> pemberian pakan alami yang tidak atau sedikit mengambil biaya, mengurangi suhu kolam, kesesuaian pakan dengan komoditas, pencatatan dan observasi perilaku dan kuantitas makan komoditas perikanan, serta aerasi yang sesuai akan mengurangi jumlah pakan yang dibutuhkan untuk tumbuh optimal.
+                                </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-header border-bottom">
+                            <h4 class="text-center">Rataan Massa Tubuh (<i>Average Body Weight</i>) (gr)</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart-container">
+                                <div id="{{ ids[3] }}"></div><hr>
+                                <p><b>Nilai yang diharapkan:</b> semakin besar lebih baik<br>
+                                    <b>Rataan massa tubuh</b> adalah jumlah massa komoditas perikanan yang disampel 
+                                    dibagi dengan jumlah komoditas perikanan yang disampel pada suatu hari. 
+                                    Harapannya sampling (pengambilan beberapa sampel komoditas perikanan untuk 
+                                    mengukur massa komoditas perikanan pada suatu waktu) secara acak akan merepresentasikan
+                                     rataan massa untuk seluruh populasi komoditas perikanan.
+                                    </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="chart-container">
+                                <div id="{{ ids[2] }}"></div><hr>
+                                <p><b>Nilai yang diharapkan:</b> semakin mendekati 100%, semakin baik<br>
+                                    <b>Tingkat Kelangsungan Hidup</b> suatu komoditas perikanan adalah populasi komoditas perikanan yang masih hidup dan berhasil dipanen pada suatu waktu tertentu dibandingkan dengan seluruh populasi benih yang dibesarkan (jumlah populasi yang mati dan yang masih hidup).
+                                    </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="chart-container">
+                                <div id="{{ ids[4] }}"></div><hr>
+                                <p><b>Nilai yang diharapkan:</b> semakin besar lebih baik<br>
+                                    <b>Rataan Pertumbuhan Harian</b> adalah rataan kenaikan massa ikan yang ditentukan oleh perbedaan rataan massa tubuh komoditas perikanan per harinya.
+                                    </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="chart-container">
+                                <div id="{{ ids[5] }}"></div><hr>
+                                <p><b>Tren yang diharapkan:</b> cenderung meningkat<br>
+                                    <b>Pakan Kumulatif</b> adalah jumlah total pakan yang telah dipakai pada suatu waktu tertentu. Ini merupakan penambahan kumulatif dari pakan harian. Dengan grafik ini, dapat diketahui kapan suatu waktu tertentu mempunyai anomali pakan harian yang besar dibandingkan dengan pakan harian lainnya. Kelandaian dari pakan kumulatif namun rataan pertumbuhan harian yang tetap atau naik menandakan efisiennya penggunaan pakan. Namun begitu perlu diketahui bahwa semakin besar rataan massa tubuh, semakin besar pula pakan yang dibutuhkan.
+                                    </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="chart-container">
+                                <div id="{{ ids[6] }}"></div><hr>
+                                <p><b>Tren yang diharapkan:</b> cenderung meningkat<br>
+                                    <b>Pakan Harian</b> adalah jumlah pakan yang diberikan terhadap komoditas perikanan dalam satu hari. Kuantitas pakan harian ini ditentukan oleh perkalian antara populasi komoditas perikanan yang masih hidup, rataan massa tubuh, dan feeding rate. Semakin tumbuh suatu komoditas, semakin meningkat massa tubuhnya dan feeding ratenya. Pakan harian yang diberikan seharusnya cenderung tidak berubah banyak setiap harinya, kecuali jika terdapat kematian sejumlah populasi yang signifikan.
+                                    </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="chart-container">
+                                <div id="{{ ids[7] }}"></div><hr>
+                                <p><b>Nilai yang diharapkan:</b> 6.5 - 9<br>
+                                    <b>Maksimum range yang harus dijaga:</b> 5.5 - 10<br>
+                                    <b>Tren yang diharapkan:</b> cenderung tetap<br>
+                                    <b>pH</b> adalah ukuran keasaman dan kebasaan air yang menyatakan konsentrasi ion hidrogen dalam air. pH merupakan negatif dari logaritma konsentrasi ion hidrogen. Fluktuasi pH biasanya terjadi sepanjang hari dan antar musim khususnya pada sistem kolam biasa dan kolam dengan kadar mikroalga yang tinggi. <br>
+                                    <b>pH pada pagi hari</b> cenderung paling rendah pada sistem tertutup tanpa sirkulasi, karena konsentrasi karbon dioksida yang tinggi. Penurunan secara gradual pH pada pagi hari menandakan adanya fluktuasi pH yang secara gradual pula. Semakin ekstrim turunnya, maka semakin besar fluktuasinya.<br>
+                                    Fluktuasi pH yang terlalu cepat maupun terpaparnya ikan terhadap pH ekstrem dapat membuat ikan stres bahkan mati. Toksisitas langsung karena tinggi atau rendahnya pH bersifat jarang dalam akuakultur. Sedangkan tokisitas tak langsung karena interaksi pH dengan konsentrasi amonia tak terionisasi, asam sulfida, klorin, dan lainnya sering terjadi. pH dipengaruhi oleh konsentrasi amonia, dan karbon dioksida dalam air, serta alkalinitas awal air. Konsentrasi amonia yang tinggi akan menaikkan pH, dan sebaliknya untuk karbon dioksida.<br>
+                                    <b>Tips:</b> jika terjadi perbedaan yang sangat tinggi antara pH pagi dan sore, maka yang harus dilakukan adalah penambahan kalsium karbonat yang menambah alkalinitas dan konsentrasi bikarbonat.
+                                    </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="chart-container">
+                                <div id="{{ ids[8] }}"></div><hr>
+                                <p><b>Nilai yang diharapkan:</b> 6.5 - 9<br>
+                                    <b>Maksimum range yang harus dijaga:</b> 5.5 - 10<br>
+                                    <b>Tren yang diharapkan:</b> cenderung tetap <br>
+                                    <b>pH pada sore hari</b> cenderung paling tinggi pada sistem tertutup tanpa sirkulasi, karena konsentrasi karbon dioksida yang rendah. Kenaikan secara gradual pH pada sore hari menandakan adanya fluktuasi pH secara gradual pula. Semakin ekstrim naiknya, maka semakin besar fluktuasinya.<br>
+                                    <b>Tips:</b> jika terjadi perbedaan yang sangat tinggi antara pH pagi dan sore, maka yang harus dilakukan adalah penambahan kalsium karbonat yang menambah alkalinitas dan konsentrasi </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="chart-container">
+                                <div id="{{ ids[9] }}"></div><hr>
+                                <p><b>Nilai yang diharapkan:</b> kurang dari 0.5 ppm (mg/L)<br>
+                                    <b>Maksimum range yang harus dijaga:</b> kurang dari 1 ppm (mg/L)<br>
+                                    <b>Tren yang diharapkan:</b> cenderung tetap atau di bawah batas nilai yang diharapkan<br>
+                                    <b>Nitrit</b> adalah zat yang beracun, namun kerentanan setiap spesies komoditas bervariasi dari satu spesies ke spesies lainnya. 2 ppm adalah konsentrasi yang mematikan bagi kebanyakan komoditas jika terpapar dalam 96 jam atau kurang. Beberapa hal yang dapat disebabkan nitrit adalah penyakit blood brown karena adanya perubahan hemoglobin menjadi methemoglobin.<br>
+                                    <b>Tips:</b> gunakan ion klorida dari garam (NaCl) dan jaga konsentrasi klorida 10 kali lipat dibandingkan konsentrasi nitrit.
+                                    </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="chart-container">
+                                <div id="{{ ids[10] }}"></div><hr>
+                                <p><b>Nilai yang diharapkan:</b> >5 ppm (mg/L)<br>
+                                    <b>Maksimum range yang harus dijaga:</b> >2 ppm (mg/L)<br>
+                                    <b>Tren yang diharapkan:</b> cenderung tetap atau di atas batas nilai yang diharapkan<br>
+                                    <b>Oksigen Terlarut (<i>Dissolved Oxygen</i>)</b> adalah jumlah gas oksigen (O2) yang terlarut dalam air. Sumber DO adalah absorpsi atau difusi langsung dari atmosfer, dengan pergerakan air yang cepat khususnya karena gelombang air mengalir dan angin, serta dari produk sampingan hasil proses fotosintesis mikroalga dan tumbuhan air. Idealnya air tidak memiliki nutrisi yang tinggi, sehingga terdapat kejernihan dan tidak tumbuhnya mikroalga dan Cyanobacteria dalam jumlah besar. Nutrisi tinggi yang didapat biasanya dari pakan ikan yang berlebih pemberiannya dapat
+                                    menambah konsentrasi mikroalga yang berlebih. Pada keadaan tersebut, fluktuasi DO akan lebih besar karena meskipun mikroalga menghasilkan produk sampingan berupa oksigen di siang hari karena proses fotosintesis lebih besar terjadi dibandingkan respirasi, mikroalga juga mengambil oksigen untuk proses respirasi yang dominan di malam hari.<br>
+                                    Oksigen Terlarut sistem tertutup tak bersirkulasi biasanya memiliki fluktuasi DO yang signifikan. Kenaikan terjadi pada siang hari karena terjadi aktivitas mikroalga yang menghasilkan oksigen, dan terjadinya respirasi aerobik.
+                                    </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="chart-container">
+                                <div id="{{ ids[11] }}"></div><hr>
+                                <p><b>Nilai yang diharapkan:</b> >5 ppm (mg/L)<br>
+                                    <b>Maksimum range yang harus dijaga:</b> >2 ppm (mg/L)<br>
+                                    <b>Tren yang diharapkan:</b> cenderung tetap atau di atas batas nilai yang diharapkan<br>
+                                    <b>Oksigen Terlarut</b> sistem tertutup tak bersirkulasi biasanya memiliki fluktuasi DO yang signifikan. Penurunan terjadi pada malam hari karena terjadi aktivitas mikroalga yang mengambil oksigen, dan terjadinya respirasi anaerobik.<br>
+                                    <b>Tips:</b> lakukan aerasi pada malam hari dengan intens sehingga kadar oksigen di malam hari </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="chart-container">
+                                <div id="{{ ids[12] }}"></div><hr>
+                                <p><b>Nilai yang diharapkan:</b> kurang dari 3.000 ppm (mg/L) untuk komoditas air tawar<br>
+                                    <b>Maksimum range yang harus dijaga:</b> kurang dari 10.000 ppm (mg/L) untuk komoditas air tawar<br>
+                                    <b>Tren yang diharapkan:</b> cenderung tetap atau di atas batas nilai yang diharapkan<br>
+                                    Beberapa ion garam (salinitas) diperlukan ikan karena ikan tidak dapat bertahan hidup pada air murni karena osmosregulasi dan pembuangan produk sisa pada insang. Untuk komoditas air payau dan air laut, nilai yang diharapkan serta range yang harus dijaga lebih tinggi.<br>
+                                    <b>Tips:</b> garam NaCl dapat ditambahkan ketika salinitasnya rendah sehingga lebih dari 500 ppm. Jika air yang ada salinitasnya tinggi, maka akan lebih baik untuk memelihara spesies komoditas air payau atau air laut. 
+                                    </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="chart-container">
+                                <div id="{{ ids[13] }}"></div><hr>
+                                <p>Nilai yang diharapkan: tergantung spesies (dari 9-18O C hingga 24-32 O C)<br>
+                                    Maksimum range yang harus dijaga: tergantung spesies<br>
+                                    Tren yang diharapkan: cenderung tetap <br>
+                                    Suhu adalah salah satu faktor yang penting dalam akuakultur. Suhu dapat mempengaruhi pertumbuhan atau growth rate spesies yang dikultur, efisiensi konversi pakan, reduksi stres selama handling dan resistensi spesies terhadap penyakit. Suhu juga dapat mempengaruhi tingkat saturasi oksigen dan mempengaruhi persentasi total amonia dalam bentuk yang tak terionisasi.<br>
+                                    Suhu pada sistem yang tidak menggunakan pemanas biasanya berfluktuasi, namun sangat tergantung pada musim dan cuaca lingkungan.<br>
+                                    Tips: jika tidak dapat menggunakan pemanas untuk mengontrol suhu air, maka dapat dilakukan isolasi tahap pertumbuhan tertentu yang rentan terhadap penyakit. Selain itu, dapat dipertimbangkan sebelumnya spesies komoditas yang akan dibudidaya agar sesuai dengan keadaan suhu air biasanya.
+                                    </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="chart-container">
+                                <div id="{{ ids[14] }}"></div><hr>
+                                <p>Nilai yang diharapkan: tergantung spesies (dari 9-18O C hingga 24-32 O C)<br>
+                                    Maksimum range yang harus dijaga: tergantung spesies<br>
+                                    Tren yang diharapkan: cenderung tetap atau di atas batas nilai yang diharapkan<br>
+                                    Suhu pada sistem yang tidak menggunakan pemanas biasanya berfluktuasi, namun sangat tergantung pada musim dan cuaca lingkungan.<br>
+                                    Tips: jika tidak dapat menggunakan pemanas untuk mengontrol suhu air, maka dapat dilakukan isolasi tahap pertumbuhan tertentu yang rentan terhadap penyakit. Selain itu, dapat dipertimbangkan sebelumnya spesies komoditas yang akan dibudidaya agar sesuai dengan keadaan suhu air biasanya.
+                                    </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="chart-container">
+                                <div id="{{ ids[15] }}"></div><hr>
+                                <p>Nilai yang diharapkan: 0 ppm(mg/L)<br>
+                                    Maksimum range yang harus dijaga: 0.6 ppm (mg/L)<br>
+                                    Tren yang diharapkan: cenderung tetap atau di atas batas nilai yang diharapkan<br>
+                                    Amonia adalah produk akhir dari reaksi pemecahan protein pada ikan dan produk dekomposisi materi organik seperti pakan ikan serta tumbuhan maupun alga yang mati. Protein akan dirubah menjadi amonia oleh bakteri sebagai hasil katabolisme dari asam amino. Ekskresi amonia oleh ikan dilakukan melalui insang dan kotorannya. Peningkatan amonia dapat terjadi jika pemberian pakan lebih banyak, maupun adanya kematian alga setelah blooming terjadi. Terdapat dua bentuk amonia, yaitu bentuk tak terionisasi (NH3) dan terionisasi (NH4+). Toksisitas yang terjadi secara langsung adalah karena konsentrasi amonia tak terionisasi (NH3). Dampak toksistas itu dapat berupa kerusakan ginjal, pertumbuhan yang melambat, kemungkinan malfungsi otak, dan berkurangnya kadar oksigen dalam darah ikan.<br>
+                                    Tips: penggunaan aerasi yang baik, feeding rate yang lebih rendah atau otomasi pemberian pakan yang terkalkulasi akan menurunkan kadar amonia dalam air.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="chart-container">
+                                <div id="{{ ids[16] }}"></div><hr>
+                                <p>Nilai yang diharapkan: 50-150 ppm (mg/L)<br>
+                                    Maksimum range yang harus dijaga: >20 ppm (mg/L)<br>
+                                    Tren yang diharapkan: cenderung tetap atau di atas batas nilai yang diharapkan<br>
+                                    Alkalinitas adalah kapasitas suatu larutan dalam menetralisir asam. Parameter ini sangat penting untuk menjaga pH tetap stabil atau fluktuasinya yang tidak ekstrim. Total alkalinitas adalah konsentrasi basa (biasanya karbonat dan bikarbonat) pada air. <br>
+                                    Tips: karena alkalinitas cenderung turun sepanjang waktu, maka penambahan kalsium karbonat untuk meningkatkan alkalinitas dapat dilakukan.
+                                    </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="chart-container">
+                                <div id="{{ ids[17] }}"></div><hr>
+                                <p>Nilai yang diharapkan: kurang dari 120 ppm (mg/L) untuk komoditas air tawar<br>
+                                    Maksimum range yang harus dijaga: kurang dari 400 ppm (mg/L) untuk komoditas air tawar<br>
+                                    Tren yang diharapkan: cenderung tetap atau di atas batas nilai yang diharapkan<br>
+                                    Kadar ion magnesium (Mg2+) memainkan peranan penting dalam regulasi ion pada komoditas air tawar karena ion ini mengatur permeabilitas bronkus. Air adalah sumber ion magnesium yang diperlukan untuk pertumbuhan ikan. Ion magnesium merupakan komposisi utama total hardness yang mempengaruhi fertilisasi, penetasan telur, dan pemeliharaan larva.<br>
+                                    Tips: gunakan magnesium sulfat untuk meningkatkan kadar magnesium </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="chart-container">
+                                <div id="{{ ids[18] }}"></div><hr>
+                                <p>Nilai yang diharapkan: >20 ppm (mg/L)<br>
+                                    Maksimum range yang harus dijaga: >5 ppm (mg/L)<br>
+                                    Tren yang diharapkan: cenderung tetap atau di atas batas nilai yang diharapkan<br>
+                                    Kadar ion kalsium (Ca2+) memainkan peranan penting dalam regulasi ion pada komoditas air tawar karena ion ini mengatur permeabilitas bronkus. Air adalah sumber ion kalsium yang diperlukan untuk pertumbuhan ikan. Ion kalsium merupakan komposisi utama total hardness yang mempengaruhi fertilisasi, penetasan telur, dan pemeliharaan larva.<br>
+                                    Tips: gunakan kalsium karbonat untuk meningkatkan kadar kalsium</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% include 'footer.html' %}
+</div>
+{% endblock content %}

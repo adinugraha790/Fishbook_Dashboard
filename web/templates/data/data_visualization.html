@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Side Navbar -->
+<div class="page">
+    {% include 'header.html' %}
+    <!-- Breadcrumb-->
+    {% include 'breadcrumb.html' %}
+    <!-- Page Header-->
+    <header class="py-4">
+        <div class="container-fluid py-2">
+            <h1 class="h3 fw-normal mb-0">{{ title }}</h1>
+        </div>
+    </header>
+    <section>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-header border-bottom">
+                            <h4 class="text-center">Metric FCR</h4>
+                        </div>
+                        <div class="card-body">
+                            <div id="{{ ids[0] }}"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-header border-bottom">
+                            <h4 class="text-center">Metric Total Pakan</h4>
+                        </div>
+                        <div class="card-body">
+                            <div id="{{ ids[1] }}"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-header border-bottom">
+                            <h4 class="text-center">Survival Rate</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart-container">
+                                <div id="{{ ids[2] }}"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-header border-bottom">
+                            <h4 class="text-center">Grafik Pertumbuhan ABW</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart-container">
+                                <div id="{{ ids[3] }}"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% for id in ids[4:] %}
+                <div class="col-lg-6">
+                    <div class="card">
+                        <!-- <div class="card-header border-bottom">
+                            <h4>Judul</h4>
+                        </div> -->
+                        <div class="card-body">
+                            <div class="chart-container">
+                                <div id="{{ id }}"></div>
+                                <!-- <hr>
+                                <p class="card-text">Deskripsi</p> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% include 'footer.html' %}
+</div>
+{% endblock content %}

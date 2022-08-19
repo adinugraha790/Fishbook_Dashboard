@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include 'head.html' %}
+    {% if title %}
+        <title>{{ title }} | Fishbook</title>
+    {% else %}
+        <title>Homepage | Fishbook</title>
+    {% endif %}
+</head>
+<body>
+    {% include 'navbar.html' %}
+    {% block content %}
+    
+    {% endblock content %}
+
+    {% include 'script.html' %}
+</body>
+</html>
